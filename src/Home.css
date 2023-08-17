@@ -2,123 +2,72 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Include padding and border in element's total width/height */
+  box-sizing: border-box;
 }
 
 /* Home.css */
 .home {
-  background-color: #f0f0f0;
-  padding: 50px;
   display: flex;
-  justify-content: space-between; /* Distribute sections evenly */
-  align-items: center; /* Align sections vertically */
-}
-
-/* Left Section */
-.left-section {
-  flex: 1; /* Take remaining space */
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  padding-right: 20px; /* Add spacing between sections */
+  align-items: stretch;
+  height: 100vh;
 }
 
-/* Container for the image stack */
-.image-stack {
-  display: flex; /* Display the images side by side */
-  overflow: hidden; /* Hide overflow to control visible area */
-  position: relative; /* Position relative for absolute positioning of images */
-  height: 260px; /* Set the height of the image stack */
+.content-section {
+  display: flex;
+  flex: 1;
 }
 
-/* Individual image style */
-.image {
-  width: 180px; /* Set the width of each image */
-  height: 260px; /* Set the height of each image */
-  transition: transform 0.5s ease-in-out; /* Smooth transition effect */
-  border-radius: 10px; /* Add border radius for rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow for a lifted effect */
+.left-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
 }
 
-/* Active image class */
-.image.active {
-  transform: translateY(0); /* Move active image into view vertically */
+.fitnav-info {
+  text-align: left;
 }
 
-/* Inactive image class */
-.image:not(.active) {
-  transform: translateY(100%); /* Move inactive images out of view */
+.fitnav-info h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-/* Right Section */
+.fitnav-info p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
 .right-section {
   position: relative;
   width: 50%;
-  height: 100%;
-  transition: width 0.3s;
+  background-color: #f7f9fc;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  position: sticky;
+  top: 0;
 }
 
-.right-section.open {
+.open {
   width: 70%;
   max-width: 400px;
 }
 
-/* Search Bar */
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  width: 100%;
-}
-
-.search-bar input {
-  flex: 1;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.search-bar button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  background: linear-gradient(to bottom right, #007bff, #0056b3);
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
 
 /* Chat Application */
 
 .chat-container {
-  /* Add your chat container styles */
-  background-color: #fff;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-}
-
-.chat-container {
+  height: 100%;
   background-color: #f7f9fc;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 300px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -126,17 +75,23 @@
   margin-bottom: 10px;
   padding: 5px 10px;
   border-radius: 5px;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .fitnav {
-  text-align: left;
   background-color: #60a5fa;
-  color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .user {
-  text-align: right;
   background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: left;
 }
 
 .message-sender {
@@ -173,3 +128,5 @@
   border-radius: 3px;
   cursor: pointer;
 }
+
+/* ... (rest of your styles) */

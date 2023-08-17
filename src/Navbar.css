@@ -1,28 +1,34 @@
 .navbar {
   background-color: teal;
   border-radius: 25px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar ul {
-  overflow: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display the list horizontally */
 }
 
 .navbar li {
-  float: right;
+  margin: 0;
+  padding: 0;
   text-transform: uppercase;
-  list-style: none;
-  margin: 16px 11px;
-  padding-top: 3px;
 }
 
 .navbar li a {
-  padding: 3px 3px;
+  padding: 10px;
   text-decoration: none;
-  color: rgb(224, 203, 11);
+  color: #e0cb0b;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .navbar li a:hover {
   color: white;
-  transition: 0.5s;
-  transform: translate3d(155px, 50px, 55px);
 }
