@@ -31,8 +31,8 @@ function Home() {
         <div className="left-section">
         {
             /* workout images and AI chat bot*/
-            <a href="https://unsplash.com/photos/xXofYCc3hqc">
-              <img src="https://unsplash.com/photos/xXofYCc3hqc" />
+            <a href="https://source.unsplash.com/800x600/?workout">
+              <img src="https://source.unsplash.com/800x600/?workout"/>
             </a>
         }
         </div>
