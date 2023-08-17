@@ -3,13 +3,13 @@ import './App.css';
 
 import React from 'react';
 import './App.css';
-import Home from './Home';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Home />
+        <About />
       </header>
     </div>
   );
