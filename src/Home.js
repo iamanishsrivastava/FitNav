@@ -23,11 +23,6 @@ function Home() {
     setSearchQuery(e.target.value);
   };
 
-  // Effect to auto-scroll to the last message
-  useEffect(() => {
-    chatContainerRef.current.scrollTop = chatMessagesRef.current.clientHeight;
-  }, [chatMessages]);
-
   // Effect to display FitNav's initial message
   useEffect(() => {
     if (chatMessages.length === 0) {
@@ -38,6 +33,14 @@ function Home() {
       setChatMessages([initialMessage]);
     }
   }, []);
+
+  // Effect to auto-scroll to the last message
+  useEffect(() => {
+    const chatContainer = chatContainerRef.current;
+    const chatMessagesDiv = chatMessagesRef.current;
+
+    chatContainer.scrollTop = chatMessagesDiv.scrollHeight;
+  }, [chatMessages]);
 
   return (
     <section className="home">
