@@ -14,7 +14,8 @@ function Home() {
         <div className="right-section">
           <div className="chat-container">
             {
-            /* Display chat messages here */
+                /* Display chat messages here */
+                
             }
           </div>
           <div className="input-container">
