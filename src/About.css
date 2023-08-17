@@ -1,0 +1,18 @@
+/* About.css */
+.about {
+    background-color: #fff;
+    padding: 50px;
+  }
+  
+  /* Style for heading */
+  .about h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Style for paragraph */
+  .about p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  

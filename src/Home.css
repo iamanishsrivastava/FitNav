@@ -1,0 +1,19 @@
+/* Home.css */
+.home {
+    background-color: #f0f0f0;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  /* Style for heading */
+  .home h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Style for paragraph */
+  .home p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
