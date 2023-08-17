@@ -2,18 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 import Navbar from './Navbar.js';
 import Home from './Home.js';
-import About from './About.js'; // Import the About component
-import Services from './Services.js'; // Import the Services component
+import About from './About.js';
+import Services from './Services.js'; 
 
 function App() {
-  const [selectedSection, setSelectedSection] = useState('home'); // Default selected section
+  const [selectedSection, setSelectedSection] = useState('home');
 
-  // Function to handle section selection
+  
   const handleSectionChange = (section) => {
     setSelectedSection(section);
   };
 
-  // Render the selected section based on the navbar option
   let sectionToRender;
   if (selectedSection === 'home') {
     sectionToRender = <Home />;

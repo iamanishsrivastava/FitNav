@@ -32,7 +32,6 @@ function Home() {
   }
 };
   
-
   // Function to handle input change
   const handleInputChange = (e) => {
     setSearchQuery(e.target.value);
