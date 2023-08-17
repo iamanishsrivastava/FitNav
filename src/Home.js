@@ -1,38 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 
 function Home() {
-  const [isChatOpen, setIsChatOpen] = useState(true); // Always open by default
   const [searchQuery, setSearchQuery] = useState('');
-  const [chatMessages, setChatMessages] = useState([
-    // Initial message from FitNav
-    { sender: 'FitNav', text: ' Hello! How can I help?' },
-  ]);
+  const [chatMessages, setChatMessages] = useState([]);
 
+  // Refs to chat container and chat messages
+  const chatContainerRef = useRef(null);
+  const chatMessagesRef = useRef(null);
+
+  // Function to handle user message submission
   const handleSearch = () => {
     if (searchQuery.trim() !== '') {
-      setChatMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: 'You', text: searchQuery },
-      ]);
+      const newMessage = { sender: 'You', text: searchQuery };
+      setChatMessages((prevMessages) => [...prevMessages, newMessage]);
       setSearchQuery('');
     }
   };
 
+  // Function to handle input change
   const handleInputChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
+  // Effect to auto-scroll to the last message
+  useEffect(() => {
+    chatContainerRef.current.scrollTop = chatMessagesRef.current.clientHeight;
+  }, [chatMessages]);
+
+  // Effect to display FitNav's initial message
+  useEffect(() => {
+    if (chatMessages.length === 0) {
+      const initialMessage = {
+        sender: 'FitNav',
+        text: 'Hello, how can I assist you today?',
+      };
+      setChatMessages([initialMessage]);
+    }
+  }, []);
+
   return (
     <section className="home">
-      <div className="left-section">
-        <div className="fitnav-info">
-          <h2>FitNav</h2>
-          <p>Your Personal Fitness Companion</p>
-        </div>
-      </div>
-      <div className={`right-section ${isChatOpen ? 'open' : ''}`}>
-        <div className="chat-container">
+      <div className="chat-container" ref={chatContainerRef}>
+        <div className="chat-messages" ref={chatMessagesRef}>
           {chatMessages.map((message, index) => (
             <div className={`chat-message ${message.sender}`} key={index}>
               <span className="message-sender">
@@ -41,20 +51,20 @@ function Home() {
               <p className="message-text">{message.text}</p>
             </div>
           ))}
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Type your question..."
-              value={searchQuery}
-              onChange={handleInputChange}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') {
-                  handleSearch();
-                }
-              }}
-            />
-            <button onClick={handleSearch}>Send</button>
-          </div>
+        </div>
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Type your question..."
+            value={searchQuery}
+            onChange={handleInputChange}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                handleSearch();
+              }
+            }}
+          />
+          <button onClick={handleSearch}>Send</button>
         </div>
       </div>
     </section>

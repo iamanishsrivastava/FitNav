@@ -1,6 +1,7 @@
 .navbar {
+  position: sticky;
   background-color: teal;
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 10px 20px;
   display: flex;
   justify-content: flex-end;
