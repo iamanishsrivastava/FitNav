@@ -62,7 +62,7 @@ function Home() {
         </div>
       </div>
       <div className="section-links">
-        <a href="#about">About</a>
+        <a href="About.js">About</a>
         <a href="#services">Services</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact Us</a>
