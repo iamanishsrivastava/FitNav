@@ -4,7 +4,8 @@ function Services() {
   return (
     <section className="services">
       <h2>Our Services</h2>
-      <p>Explore our range of fitness services and programs.</p>
+      <p>FitNav prioritize the needs and preferences of your users. It 
+    create user personas, and gather feedback throughout the design process to ensure the app meets user's expectations.</p>
     </section>
   );
 }
