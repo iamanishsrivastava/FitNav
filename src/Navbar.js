@@ -8,12 +8,12 @@ const Navbar = () => {
   return (
     <header>
       <nav className="navbar">
-        <ul>
+        <ul>          
+          <li><a href="./Home.js">Home</a></li>
+          <li><a href="./About.js">About</a></li>
+          <li><a href="./Services.js">Services</a></li>
+          <li><a href="./Testimonial.js">Testimonials</a></li>
           <li><a href="./Contact.js">Contact</a></li>
-          <li><a href="#Testimonial.html">Testimonials</a></li>
-          <li><a href="#Services.html">Services</a></li>
-          <li><a href="#About.html">About</a></li>
-          <li><a href="#Home.html">Home</a></li>
         </ul>
       </nav>
     </header>
