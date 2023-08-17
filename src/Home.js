@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css'; // Import your Home section CSS file
 
 function Home() {
-  
   const [isChatOpen, setIsChatOpen] = useState(false); // State to track chat window status
   const [searchQuery, setSearchQuery] = useState('');
   const [chatMessages, setChatMessages] = useState([]); // State to track chat messages
@@ -14,7 +13,7 @@ function Home() {
       // Add user's message to chat messages
       setChatMessages((prevMessages) => [
         ...prevMessages,
-        { sender: 'user', text: searchQuery },
+        { sender: 'You', text: searchQuery }, // Sender is 'You'
       ]);
       setSearchQuery('');
     }
@@ -25,16 +24,40 @@ function Home() {
     setSearchQuery(e.target.value);
   };
 
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Function to handle image transition
+  const handleImageTransition = () => {
+    setCurrentImage((prevImage) => (prevImage + 1) % 3);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(handleImageTransition, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
+    
     <section className="home">
       <div className="home-content">
-        <div className="left-section">
-        {
-            /* workout images and AI chat bot*/
-            <a href="https://source.unsplash.com/800x600/?workout">
-              <img src="https://source.unsplash.com/800x600/?workout"/>
-            </a>
-        }
+      <div className="left-section">
+          <div className="image-stack">
+            <img
+              src="https://source.unsplash.com/180x260/?vector-fitness"
+              alt="Workout"
+              className={`image ${currentImage === 0 ? 'active' : ''}`}
+            />
+            <img
+              src="https://source.unsplash.com/180x260/?vector-fitness"
+              alt="Workout"
+              className={`image ${currentImage === 1 ? 'active' : ''}`}
+            />
+            <img
+              src="https://source.unsplash.com/180x260/?fitness"
+              alt="Workout"
+              className={`image ${currentImage === 2 ? 'active' : ''}`}
+            />
+          </div>
         </div>
         <div className={`right-section ${isChatOpen ? 'open' : ''}`}>
           <div className="chat-container">
@@ -55,6 +78,11 @@ function Home() {
                 placeholder="Type your question..."
                 value={searchQuery}
                 onChange={handleInputChange}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    handleSearch();
+                  }
+                }}
               />
               <button onClick={handleSearch}>Send</button>
             </div>

@@ -1,28 +1,66 @@
+/* Default Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
 /* Home.css */
 .home {
-    background-color: #f0f0f0;
-    padding: 50px;
-    text-align: center;
-  }
-  
-  /* Style for heading */
-  .home h2 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  /* Style for paragraph */
-  .home p {
-    font-size: 1.2rem;
-    color: #666;
-  }
+  background-color: #f0f0f0;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between; /* Distribute sections evenly */
+  align-items: center; /* Align sections vertically */
+}
 
-  /* Right Section */
+/* Left Section */
+.left-section {
+  flex: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 20px; /* Add spacing between sections */
+}
+
+/* Container for the image stack */
+.image-stack {
+  display: flex; /* Display the images side by side */
+  overflow: hidden; /* Hide overflow to control visible area */
+  position: relative; /* Position relative for absolute positioning of images */
+  height: 260px; /* Set the height of the image stack */
+}
+
+/* Individual image style */
+.image {
+  width: 180px; /* Set the width of each image */
+  height: 260px; /* Set the height of each image */
+  transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow for a lifted effect */
+}
+
+/* Active image class */
+.image.active {
+  transform: translateY(0); /* Move active image into view vertically */
+}
+
+/* Inactive image class */
+.image:not(.active) {
+  transform: translateY(100%); /* Move inactive images out of view */
+}
+
+/* Right Section */
 .right-section {
   position: relative;
   width: 50%;
   height: 100%;
   transition: width 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .right-section.open {
@@ -30,24 +68,25 @@
   max-width: 400px;
 }
 
-.search-container {
+/* Search Bar */
+.search-bar {
   display: flex;
   align-items: center;
-  padding: 10px;
-  background-color: #f0f0f0;
+  margin-top: 10px;
+  width: 100%;
 }
 
-.search-container input {
+.search-bar input {
   flex: 1;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.search-container button {
+.search-bar button {
   margin-left: 10px;
   padding: 5px 10px;
-  background-color: #007bff;
+  background: linear-gradient(to bottom right, #007bff, #0056b3);
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -92,7 +131,7 @@
 .fitnav {
   text-align: left;
   background-color: #60a5fa;
-  color: #fff;
+  color: black;
 }
 
 .user {
