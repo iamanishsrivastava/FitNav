@@ -5,6 +5,7 @@ function Contact() {
   return (
     <section className="contact">
       <h2>Contact Us</h2>
+      <br/><br/>
       <p>Get in touch with our team for inquiries and support.</p>
     </section>
   );

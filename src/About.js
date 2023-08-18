@@ -5,7 +5,8 @@ const About = () => {
   return (
     <section className="section about">
       <div className="about-content">
-        <h2>About FitNav</h2>
+        <h1>About FitNav</h1>
+        <br/><br/>
         <p>
           Welcome to FitNav, your ultimate destination for fitness and wellness. Our mission is to guide and inspire individuals on their journey to a healthier and more active lifestyle.
         </p>

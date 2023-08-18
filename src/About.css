@@ -5,7 +5,7 @@
   }
   
   /* Style for heading */
-  .about h2 {
+  .about h1 {
     font-size: 2rem;
     color: #333;
   }
@@ -14,6 +14,7 @@
   .about p {
     font-size: 1.2rem;
     color: #666;
+    /* align-content: justify; */
   }
 
 .description {
