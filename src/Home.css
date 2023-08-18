@@ -7,7 +7,9 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #1e1e1e; /* Dark background color */
+  /* background-color: #1e1e1e; Dark background color */
+  background-color: white;
+  background-image: url("./wallHe.jpg");
   color: #ffffff; /* Text color for dark mode */
    /* overflow: hidden; Prevent body scroll  */
 }
@@ -15,30 +17,29 @@ body {
 
 /* Chat Container */
 .chat-container {
-  /* position: absolute; */
-  top: 0;
+  position: fixed;
+  bottom: 20px;
   right: 0;
-  width: 100vw;
+  width: 50vw;
   max-height: 80vh; /* Set a maximum height for the chat container */
-  background-color: #121212;
-  border-radius: 0;
+  background-color: #7a7373;
+  border-radius: 5px;
   box-shadow: none;
   overflow-y: auto;
   transition: width 0.3s;
   z-index: 0;
+  text-align: right;
 }
 
 /* Chat Messages */
-.chat-messages {
+/* .chat-messages {
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto; /* Enable vertical scrolling within the chat messages */
-  max-height: calc(80vh - 50px); /* Adjust maximum height to accommodate search bar */
-}
+  /* max-height: calc(80vh - 50px); Adjust maximum height to accommodate search bar */
+/* } */ 
 
-.chat-message {
-  margin-bottom: 20px;
-}
+
 
 .message-sender {
   font-weight: bold;
@@ -51,6 +52,7 @@ body {
 
 /* Search Bar */
 .search-bar {
+  /* width: 50wh; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,7 +72,8 @@ body {
 .search-bar button {
   margin-left: 10px;
   padding: 10px 20px;
-  background-color: #007bff;
+  /* background-color: #007bff; */
+  background-color: teal;
   color: #ffffff; /* Text color for dark mode */
   border: none;
   border-radius: 5px;
@@ -82,10 +85,25 @@ body {
   background-color: #0056b3;
 }
 
+.chat-message {
+  display: inline-block;
+  /* margin-bottom: 20px; */
+  /* background-color: rgb(108, 233, 108);
+   */
+   background-color: #e1cc0fc0;
+  border-radius: 30px;
+  padding: 20px;
+  margin:0px;
+  text-align: right;
+  box-shadow: none;
+}
+
 /* FitNav Message */
 .chat-message.FitNav {
-  background-color: #007bff; /* Blue color for FitNav message */
-  border-radius: 5px;
+  margin: 10px;
+  display: block;
+  background-color: teal; /* Blue color for FitNav message */
+  border-radius: 30px;
   padding: 20px;
   margin: 0;
   text-align: left;
@@ -93,14 +111,15 @@ body {
 }
 
 /* User Message */
-.chat-message.You {
-  background-color: #1a1a1a; /* Dark color for user message */
-  border-radius: 5px;
+/* .chat-message.You {
+  display: inline-block;
+  background-color: rgba(93, 20, 2, 0.805); /* Dark color for user message */
+  /* border-radius: 5px;
   padding: 20px;
   margin: 0;
   text-align: right;
-  box-shadow: none;
-}
+  box-shadow: none; }*/
+
 
 /* Chat Container Open */
 .chat-container.open {
