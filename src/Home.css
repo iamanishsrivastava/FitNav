@@ -94,7 +94,8 @@ body {
    background-color: #e1cc0fc0;
   border-radius: 30px;
   padding: 20px;
-  margin:0px;
+  margin-top:10px;
+  margin-bottom: 10px;
   text-align: right;
   box-shadow: none;
 }
