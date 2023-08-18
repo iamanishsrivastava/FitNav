@@ -10,6 +10,7 @@ body {
   /* background-color: #1e1e1e; Dark background color */
   background-color: white;
   background-image: url("./wallHe.jpg");
+  background-size: cover;
   color: #ffffff; /* Text color for dark mode */
    /* overflow: hidden; Prevent body scroll  */
 }
@@ -23,7 +24,7 @@ body {
   width: 50vw;
   max-height: 80vh; /* Set a maximum height for the chat container */
   background-color: #7a7373;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: none;
   overflow-y: auto;
   transition: width 0.3s;
