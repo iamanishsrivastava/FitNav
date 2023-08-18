@@ -57,7 +57,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: #1e1e1e; /* Dark background color */
 }
 
@@ -71,7 +71,7 @@ body {
 }
 
 .search-bar button {
-  margin-left: 10px;
+  margin-left: 20px;
   padding: 10px 20px;
   /* background-color: #007bff; */
   background-color: teal;
